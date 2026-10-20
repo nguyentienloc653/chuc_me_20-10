@@ -1,30 +1,8 @@
-const wishButton = document.getElementById("wishButton");
-const message = document.getElementById("message");
 const hearts = document.getElementById("hearts");
 
-const wishes = [
-  wishButton.addEventListener("click", () => {
-    window.location.href = "grallery.html";
-  }),
-];
-
-let wishIndex = 0;
-
-wishButton.addEventListener("click", () => {
-  message.style.opacity = "0";
-
-  setTimeout(() => {
-    message.textContent = wishes[wishIndex];
-    message.style.transition = "opacity 0.5s";
-    message.style.opacity = "1";
-
-    wishIndex = (wishIndex + 1) % wishes.length;
-  }, 250);
-
-  createHearts(18);
-});
-
 function createHearts(amount = 3) {
+  if (!hearts) return;
+
   for (let i = 0; i < amount; i++) {
     const heart = document.createElement("span");
 
@@ -45,5 +23,6 @@ function createHearts(amount = 3) {
   }
 }
 
-// Tự động tạo trái tim bay
-setInterval(() => createHearts(1), 900);
+if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+  setInterval(() => createHearts(1), 1400);
+}

@@ -3,196 +3,166 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <title>Món quà 20/10 💗</title>
-
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-
-      body {
-        min-height: 100vh;
-        padding: 50px 24px;
-        font-family: "Segoe UI", sans-serif;
-        background:
-          radial-gradient(ellipse at top, #fff7fb, transparent 60%),
-          linear-gradient(135deg, #ffe4ec, #fff0f5, #fce1ff);
-      }
-
-      /* Tiêu đề */
-      h1 {
-        text-align: center;
-        color: #c83272;
-        font-size: clamp(28px, 4vw, 42px);
-        margin-bottom: 12px;
-        text-shadow: 0 3px 12px #e879a933;
-      }
-
-      .subtitle {
-        text-align: center;
-        color: #a64d79;
-        font-size: 16px;
-        line-height: 1.7;
-        margin-bottom: 38px;
-      }
-
-      /* Bố cục cố định 2 cột, 2 hàng */
-      .gallery {
-        width: 100%;
-        max-width: 900px;
-        margin: 0 auto;
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 24px;
-      }
-
-      /* Khung ảnh */
-      .gallery img {
-        display: block;
-        width: 100%;
-        height: 320px;
-        object-fit: cover;
-
-        padding: 8px;
-        background: white;
-        border: 1px solid #f8c9dc;
-        border-radius: 22px;
-
-        box-shadow:
-          0 10px 30px #c8327220,
-          0 3px 8px #c8327212;
-
-        transition:
-          transform 0.35s ease,
-          box-shadow 0.35s ease;
-
-        animation: fadeIn 0.8s ease both;
-      }
-
-      /* Tạo thời gian xuất hiện lần lượt */
-      .gallery img:nth-child(1) {
-        animation-delay: 0.1s;
-      }
-
-      .gallery img:nth-child(2) {
-        animation-delay: 0.25s;
-      }
-
-      .gallery img:nth-child(3) {
-        animation-delay: 0.4s;
-      }
-
-      .gallery img:nth-child(4) {
-        animation-delay: 0.55s;
-      }
-
-      /* Hiệu ứng rê chuột */
-      .gallery img:hover {
-        transform: translateY(-7px) scale(1.025);
-        box-shadow: 0 18px 40px #c8327238;
-      }
-
-      /* Hiệu ứng xuất hiện */
-      @keyframes fadeIn {
-        from {
-          opacity: 0;
-          transform: translateY(25px);
-        }
-
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-
-      /* Điện thoại */
-      @media (max-width: 600px) {
-        body {
-          padding: 32px 16px;
-        }
-
-        .subtitle {
-          margin-bottom: 25px;
-          font-size: 14px;
-        }
-
-        .gallery {
-          grid-template-columns: 1fr;
-          gap: 20px;
-          max-width: 420px;
-        }
-
-        .gallery img {
-          height: auto;
-          aspect-ratio: 4 / 3;
-          border-radius: 18px;
-          padding: 6px;
-        }
-
-        .gallery img:hover {
-          transform: translateY(-3px);
-        }
-      }
-
-      /* Giảm chuyển động nếu người dùng yêu cầu */
-      @media (prefers-reduced-motion: reduce) {
-        .gallery img {
-          animation: none;
-          transition: none;
-        }
-      }
-
-      /* Nút quay về */
-      .back-button {
-        display: block;
-        margin: 0 auto 30px;
-        padding: 12px 22px;
-
-        border: 1px solid #f3b5ce;
-        border-radius: 30px;
-
-        background: rgba(255, 255, 255, 0.85);
-        color: #c83272;
-
-        font-size: 15px;
-        font-weight: 600;
-        font-family: inherit;
-
-        cursor: pointer;
-        box-shadow: 0 5px 15px #c8327215;
-
-        transition: all 0.3s ease;
-      }
-
-      .back-button:hover {
-        background: #d94d88;
-        color: white;
-        transform: translateX(-4px);
-        box-shadow: 0 8px 20px #c8327230;
-      }
-
-      .back-button:active {
-        transform: scale(0.97);
-      }
-    </style>
+    <meta name="theme-color" content="#fbf6ef" />
+    <title>Album gia đình · 20/10</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
+  <body class="gallery-page">
+    <main class="gallery-shell">
+      <a class="back-link" href="index.html">
+        <span aria-hidden="true">←</span> Trang chủ
+      </a>
 
-  <body>
-    <button class="back-button" onclick="window.location.href = 'index.html'">
-      ← Quay về trang trước
-    </button>
-    <h1>💗 Dành Tặng mẹ 💗</h1>
+      <header class="gallery-header">
+        <p class="section-kicker">NHỮNG KHOẢNH KHẮC THÂN QUEN</p>
+        <h1>Album <em>gia đình</em></h1>
+        <p class="intro">
+          Lưu lại những nụ cười và phút giây ấm áp bên những người mình yêu
+          thương.
+        </p>
+      </header>
 
-    <p class="subtitle">Chúc mẹ một ngày 20/10 thật hạnh phúc 🌷</p>
-
-    <div class="gallery">
-      <img src="./img/beauty_20200116191005.jpg" alt="Ảnh kỷ niệm 2" />
-      <img src="./img/beauty_20200116191012.jpg" alt="Ảnh kỷ niệm 3" />
-      <img src="./img/faceu_1643648922741.JPEG" alt="Ảnh kỷ niệm 3" />
-      <img src="./img/faceu_1656305009359.JPEG" alt="Ảnh kỷ niệm 3" />
-    </div>
+      <section class="gallery" aria-label="Ảnh gia đình">
+        <img
+          class="gallery-feature"
+          src="./img/faceu_1643648922741.JPEG"
+          alt="Khoảnh khắc ấm áp bên người thân trong gia đình"
+          width="2880"
+          height="2160"
+          fetchpriority="high"
+        />
+        <div class="gallery-grid">
+          <img
+            src="./img/beauty_20200116191005.jpg"
+            alt="Mẹ lập nè"
+            width="1080"
+            height="1440"
+            loading="lazy"
+            decoding="async"
+          />
+          <img
+            src="./img/faceu_1656305009359.JPEG"
+            alt="Mẹ lập xinh thí :>>"
+            width="2160"
+            height="2880"
+            loading="lazy"
+            decoding="async"
+          />
+          <img
+            src="./img/beauty_20200116191012.jpg"
+            alt="Há há"
+            width="1080"
+            height="1440"
+            loading="lazy"
+            decoding="async"
+          />
+          <img
+            src="./img/1792498989629_7966953442903119734_7966953442903119734_cb0819820c4ac9bb6b419cbcb66eeb27.jpg"
+            alt="Sau về bác hà mời cà phê nhá"
+            width="958"
+            height="1276"
+            loading="lazy"
+            decoding="async"
+          />
+          <img
+            src="./img/1792498989651_7966953442903119734_7966953442903119734_4378e06fc318e235385d017863959ff0.jpg"
+            alt="không biết nói gì luôn"
+            width="1280"
+            height="1018"
+            loading="lazy"
+            decoding="async"
+          />
+          <img
+            src="./img/1792498989667_7966953442903119734_7966953442903119734_b5bafb4adc55791974e473126bf60d37.jpg"
+            alt="slay quá"
+            width="960"
+            height="1280"
+            loading="lazy"
+            decoding="async"
+          />
+          <img
+            src="./img/1792498989681_7966953442903119734_7966953442903119734_700edaec79cb8307f3b8a2e92f5ce676.jpg"
+            alt="Khoa bẩn và bác hà"
+            width="1280"
+            height="1114"
+            loading="lazy"
+            decoding="async"
+          />
+          <img
+            src="./img/1792499151226_7966953442903119734_7966953442903119734_7cfabb60aee1cc063792e4d7dfd26ed6.jpg"
+            alt="Xin mãi mới cho ảnh"
+            width="960"
+            height="1280"
+            loading="lazy"
+            decoding="async"
+          />
+          <img
+            src="./img/beauty_20190224095437.jpg"
+            alt="20/10 zui vẻ"
+            width="1080"
+            height="1440"
+            loading="lazy"
+            decoding="async"
+          />
+          <img
+            src="./img/GHFX9268.JPG"
+            alt="Sau về cháu đòi lẩu nhá"
+            width="1560"
+            height="2104"
+            loading="lazy"
+            decoding="async"
+          />
+          <img
+            src="./img/IMG_7240.JPG"
+            alt="Tấm này bác thanh xinh thí"
+            width="960"
+            height="960"
+            loading="lazy"
+            decoding="async"
+          />
+          <img
+            src="./img/IMG_7241.JPG"
+            alt="Hôm này không được đi chơi này"
+            width="1134"
+            height="2048"
+            loading="lazy"
+            decoding="async"
+          />
+          <img
+            src="./img/IMG_7242.JPG"
+            alt="Chị tôi"
+            width="761"
+            height="1200"
+            loading="lazy"
+            decoding="async"
+          />
+          <img
+            src="./img/IMG_7243.JPG"
+            alt="khỏi phải bàn rồi"
+            width="762"
+            height="1200"
+            loading="lazy"
+            decoding="async"
+          />
+          <img
+            src="./img/IMG_7244.JPG"
+            alt="Khôn được đi chụp cùng"
+            width="1297"
+            height="2048"
+            loading="lazy"
+            decoding="async"
+          />
+          <img
+            src="./img/IMG_7245.JPG"
+            alt="Linh béo"
+            width="1504"
+            height="2048"
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
+      </section>
+    </main>
+    <script src="gallery.js" defer></script>
   </body>
 </html>
