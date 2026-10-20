@@ -1,0 +1,188 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 24px;
+  overflow-x: hidden;
+  font-family: "Segoe UI", sans-serif;
+  background: linear-gradient(135deg, #ffe4ec, #fff0f5, #fce1ff);
+}
+
+.card {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 620px;
+  padding: 45px 30px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.85);
+  border: 2px solid white;
+  border-radius: 30px;
+  box-shadow: 0 15px 50px rgba(214, 95, 145, 0.2);
+  animation: appear 1s ease;
+}
+
+.flower {
+  font-size: 38px;
+  margin-bottom: 20px;
+}
+
+.subtitle {
+  color: #d94d88;
+  font-size: 13px;
+  font-weight: bold;
+  letter-spacing: 3px;
+  margin-bottom: 18px;
+}
+
+h1 {
+  color: #c83272;
+  font-size: clamp(27px, 5vw, 42px);
+  line-height: 1.4;
+}
+
+.line {
+  width: 100px;
+  height: 3px;
+  background: #f19cbd;
+  margin: 22px auto;
+  border-radius: 10px;
+}
+
+.intro {
+  color: #79536a;
+  font-size: 17px;
+}
+
+.bouquet {
+  font-size: 85px;
+  margin: 20px 0;
+  animation: sway 2s ease-in-out infinite;
+}
+
+.message {
+  max-width: 480px;
+  margin: 0 auto 28px;
+  padding: 4px 0 4px 18px;
+  border-left: 3px solid #f19cbd;
+  color: #754252;
+  font-size: 17px;
+  line-height: 1.9;
+  text-align: left;
+  white-space: pre-line;
+}
+
+button {
+  border: none;
+  padding: 15px 25px;
+  border-radius: 50px;
+  background: linear-gradient(135deg, #f47ca8, #d94083);
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 7px 20px #e78dbb66;
+  transition: 0.3s;
+}
+
+button:hover {
+  transform: translateY(-4px) scale(1.03);
+  box-shadow: 0 10px 25px #e78dbb99;
+}
+
+.signature {
+  color: #d94d88;
+  margin-top: 28px;
+  font-style: italic;
+}
+
+.heart {
+  position: fixed;
+  bottom: -40px;
+  pointer-events: none;
+  animation: floatUp linear forwards;
+  z-index: 0;
+}
+
+@keyframes floatUp {
+  to {
+    transform: translateY(-110vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes sway {
+  0%,
+  100% {
+    transform: rotate(-5deg);
+  }
+  50% {
+    transform: rotate(5deg);
+  }
+}
+
+@media (max-width: 600px) {
+  body {
+    min-height: 100vh;
+    padding: 16px 12px;
+  }
+
+  .card {
+    max-width: 480px;
+    padding: 30px 18px;
+    border-radius: 22px;
+  }
+
+  .subtitle {
+    font-size: 11px;
+    letter-spacing: 1.5px;
+  }
+
+  h1 {
+    font-size: clamp(25px, 7vw, 34px);
+  }
+
+  .intro {
+    font-size: 15px;
+  }
+
+  .bouquet {
+    font-size: 68px;
+    margin: 14px 0;
+  }
+
+  .message {
+    padding-left: 12px;
+    font-size: 15px;
+    line-height: 1.75;
+  }
+
+  button {
+    width: 100%;
+    max-width: 320px;
+    padding: 14px 16px;
+    font-size: 14px;
+  }
+
+  .signature {
+    margin-top: 22px;
+  }
+}

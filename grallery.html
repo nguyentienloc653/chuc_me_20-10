@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Món quà 20/10 💗</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        min-height: 100vh;
+        padding: 50px 24px;
+        font-family: "Segoe UI", sans-serif;
+        background:
+          radial-gradient(ellipse at top, #fff7fb, transparent 60%),
+          linear-gradient(135deg, #ffe4ec, #fff0f5, #fce1ff);
+      }
+
+      /* Tiêu đề */
+      h1 {
+        text-align: center;
+        color: #c83272;
+        font-size: clamp(28px, 4vw, 42px);
+        margin-bottom: 12px;
+        text-shadow: 0 3px 12px #e879a933;
+      }
+
+      .subtitle {
+        text-align: center;
+        color: #a64d79;
+        font-size: 16px;
+        line-height: 1.7;
+        margin-bottom: 38px;
+      }
+
+      /* Bố cục cố định 2 cột, 2 hàng */
+      .gallery {
+        width: 100%;
+        max-width: 900px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 24px;
+      }
+
+      /* Khung ảnh */
+      .gallery img {
+        display: block;
+        width: 100%;
+        height: 320px;
+        object-fit: cover;
+
+        padding: 8px;
+        background: white;
+        border: 1px solid #f8c9dc;
+        border-radius: 22px;
+
+        box-shadow:
+          0 10px 30px #c8327220,
+          0 3px 8px #c8327212;
+
+        transition:
+          transform 0.35s ease,
+          box-shadow 0.35s ease;
+
+        animation: fadeIn 0.8s ease both;
+      }
+
+      /* Tạo thời gian xuất hiện lần lượt */
+      .gallery img:nth-child(1) {
+        animation-delay: 0.1s;
+      }
+
+      .gallery img:nth-child(2) {
+        animation-delay: 0.25s;
+      }
+
+      .gallery img:nth-child(3) {
+        animation-delay: 0.4s;
+      }
+
+      .gallery img:nth-child(4) {
+        animation-delay: 0.55s;
+      }
+
+      /* Hiệu ứng rê chuột */
+      .gallery img:hover {
+        transform: translateY(-7px) scale(1.025);
+        box-shadow: 0 18px 40px #c8327238;
+      }
+
+      /* Hiệu ứng xuất hiện */
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(25px);
+        }
+
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* Điện thoại */
+      @media (max-width: 600px) {
+        body {
+          padding: 32px 16px;
+        }
+
+        .subtitle {
+          margin-bottom: 25px;
+          font-size: 14px;
+        }
+
+        .gallery {
+          grid-template-columns: 1fr;
+          gap: 20px;
+          max-width: 420px;
+        }
+
+        .gallery img {
+          height: auto;
+          aspect-ratio: 4 / 3;
+          border-radius: 18px;
+          padding: 6px;
+        }
+
+        .gallery img:hover {
+          transform: translateY(-3px);
+        }
+      }
+
+      /* Giảm chuyển động nếu người dùng yêu cầu */
+      @media (prefers-reduced-motion: reduce) {
+        .gallery img {
+          animation: none;
+          transition: none;
+        }
+      }
+
+      /* Nút quay về */
+      .back-button {
+        display: block;
+        margin: 0 auto 30px;
+        padding: 12px 22px;
+
+        border: 1px solid #f3b5ce;
+        border-radius: 30px;
+
+        background: rgba(255, 255, 255, 0.85);
+        color: #c83272;
+
+        font-size: 15px;
+        font-weight: 600;
+        font-family: inherit;
+
+        cursor: pointer;
+        box-shadow: 0 5px 15px #c8327215;
+
+        transition: all 0.3s ease;
+      }
+
+      .back-button:hover {
+        background: #d94d88;
+        color: white;
+        transform: translateX(-4px);
+        box-shadow: 0 8px 20px #c8327230;
+      }
+
+      .back-button:active {
+        transform: scale(0.97);
+      }
+    </style>
+  </head>
+
+  <body>
+    <button class="back-button" onclick="window.location.href = 'index.html'">
+      ← Quay về trang trước
+    </button>
+    <h1>💗 Dành Tặng mẹ 💗</h1>
+
+    <p class="subtitle">Chúc mẹ một ngày 20/10 thật hạnh phúc 🌷</p>
+
+    <div class="gallery">
+      <img src="./img/beauty_20200116191005.jpg" alt="Ảnh kỷ niệm 2" />
+      <img src="./img/beauty_20200116191012.jpg" alt="Ảnh kỷ niệm 3" />
+      <img src="./img/faceu_1643648922741.JPEG" alt="Ảnh kỷ niệm 3" />
+      <img src="./img/faceu_1656305009359.JPEG" alt="Ảnh kỷ niệm 3" />
+    </div>
+  </body>
+</html>
